@@ -566,6 +566,7 @@ chunk_t x509_parse_authorityKeyIdentifier(chunk_t blob, int level0,
 		switch (objectID)
 		{
 			case AUTH_KEY_ID_KEY_ID:
+				chunk_free(&authKeyIdentifier);
 				authKeyIdentifier = chunk_clone(object);
 				break;
 			case AUTH_KEY_ID_CERT_ISSUER:
